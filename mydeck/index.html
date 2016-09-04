@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>K-mean clustering of Pokemon Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="K-mean clustering of Pokemon Data">
+  <meta name="author" content="Tom Snir">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>K-mean clustering of Pokemon Data</h1>
+    <h2>performed as a course project for Courseras &quot;Developing Data Products&quot; Course</h2>
+    <p>Tom Snir<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The Assignment:</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We were instructed to do the following:</p>
+
+<ul>
+<li>Create a Shiny application</li>
+<li>Deploy the application on Rstudio&#39;s shiny server</li>
+<li>Write a pitch and present it using Slidify</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>My Data:</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The data used in my application is taken from the following Kaggle page:</p>
+
+<p><a href="https://www.kaggle.com/abcsds/pokemon">https://www.kaggle.com/abcsds/pokemon</a></p>
+
+<p>This data set includes 721 Pokemon, including their number, name, first and second type, and basic stats such as HP, Attack, Defense, etc.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Data Exploration</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>##   X.                  Name Type.1 Type.2 Total HP Attack Defense Sp..Atk
+## 1  1             Bulbasaur  Grass Poison   318 45     49      49      65
+## 2  2               Ivysaur  Grass Poison   405 60     62      63      80
+## 3  3              Venusaur  Grass Poison   525 80     82      83     100
+## 4  3 VenusaurMega Venusaur  Grass Poison   625 80    100     123     122
+## 5  4            Charmander   Fire          309 39     52      43      60
+## 6  5            Charmeleon   Fire          405 58     64      58      80
+##   Sp..Def Speed Generation Legendary
+## 1      65    45          1     False
+## 2      80    60          1     False
+## 3     100    80          1     False
+## 4     120    80          1     False
+## 5      50    65          1     False
+## 6      65    80          1     False
+</code></pre>
+
+<p>The data itself is complete, however several variables were removed (ID, name, is the pokemon considered legendary or not) were removed from the classification.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My application can be found on:</p>
+
+<p><a href="https://tomsnir.shinyapps.io/Course9-DDP/">https://tomsnir.shinyapps.io/Course9-DDP/</a></p>
+
+<p>It performs K-mean Clustering, while allowing the user to pick the number of clusters, as well as the X and Y axis.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The Assignment:'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='My Data:'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Data Exploration'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Application'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

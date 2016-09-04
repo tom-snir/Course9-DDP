@@ -1,0 +1,59 @@
+---
+title       : K-mean clustering of Pokemon Data
+subtitle    : performed as a course project for Courseras "Developing Data Products" Course
+author      : Tom Snir
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## The Assignment:
+
+We were instructed to do the following:
+
+- Create a Shiny application
+- Deploy the application on Rstudio's shiny server
+- Write a pitch and present it using Slidify
+
+--- 
+
+## My Data:
+
+The data used in my application is taken from the following Kaggle page:
+
+https://www.kaggle.com/abcsds/pokemon
+
+This data set includes 721 Pokemon, including their number, name, first and second type, and basic stats such as HP, Attack, Defense, etc.
+
+
+--- 
+
+## Data Exploration
+
+```{r, echo=FALSE}
+setwd('/users/Tom/Desktop/Data Science/Course9-DDP/mydeck')
+PokeData <- read.csv("Pokemon.csv")
+head(PokeData)
+
+```
+
+The data itself is complete, however several variables were removed (ID, name, is the pokemon considered legendary or not) were removed from the classification.
+
+--- 
+
+## The Application
+
+My application can be found on:
+
+https://tomsnir.shinyapps.io/Course9-DDP/
+
+It performs K-mean Clustering, while allowing the user to pick the number of clusters, as well as the X and Y axis.
+
+
+
+
+
+
