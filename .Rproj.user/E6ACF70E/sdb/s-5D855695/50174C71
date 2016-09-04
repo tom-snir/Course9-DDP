@@ -1,0 +1,18 @@
+{
+    "contents" : "#ui.R\n\n# Load the relevant libraries\n\nlibrary(shiny)\n\nPokeData <- read.csv(\"./data/Pokemon.csv\")\n\n# Keep only relevant variables\n\nMyData <- PokeData[c(-1, -2, -3, -4, -13)]\n\nshinyUI(pageWithSidebar(\n  headerPanel('Pokemon Data k-means Clustering'),\n  sidebarPanel(\n    selectInput('xcol', 'X Variable', names(MyData)),\n    selectInput('ycol', 'Y Variable', names(MyData),\n                selected=names(MyData)[[2]]),\n    numericInput('clusters', 'Cluster count', 3,\n                 min = 1, max = 9)\n  ),\n  mainPanel(\n    plotOutput('plot1')\n  )\n))",
+    "created" : 1473000545103.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1357950504",
+    "id" : "50174C71",
+    "lastKnownWriteTime" : 1473007400,
+    "path" : "C:/Users/Tom/Desktop/Data Science/Course9-DDP/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
